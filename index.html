@@ -11,78 +11,322 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
     <div class="title-box">
-        <h1 class="title">NYC Neighborhood Shootings in 2020: Breakdown of Possible Relationships</h1>
-        <p class="intro-text">If you are from the United States, when you hear the phrase, “Gun-related violence” you probably don’t think much of it. Not because you don’t think there is anything wrong with it, but because it has become such a common thing to hear about happening here that it just doesn’t surprise you anymore. Gun violence and gun control have become a heated debate in the United States between those in power and also your average gun enthusiast and anti-gun person. While we sit and wait for policy to change on gun laws, innocent people are being killed by the thousands every year because of these weapons of war that we have allowed almost anyone to own. Mass shootings have become a weekly thing and it doesn’t look like they are going to slow down anytime soon unless we find a way to make a change. My question is if gun enthusiasts refuse to let us change our gun laws, are there any other ways we can slow the rate of these gun-related crimes from happening? 
+        <h1 class="title">NYC Neighborhood Shootings in 2020: Breakdown and Possible Relationships</h1>
+        <p class="intro-text">If you are from the United States, the phrase “Gun-related violence” probably isn't
+            new to you. It has become such a common thing to hear about happening here that it just doesn’t surprise you
+            anymore. Gun
+            control has been a heated debate in the United States for a number of years now, but not much has changed.
+            Innocent people are
+            being killed by the thousands every year because of these weapons of war that we have allowed almost anyone
+            to own. Mass shootings have become a weekly thing and it doesn’t look like they are going to slow down
+            anytime soon unless we find a way to make a change. New York is no stranger to gun-related violnce and saw
+            in increase in 2020. Our question is what can we learn about from the location of these shootings? Is there
+            any relationship between where the shootings are happening and the people that live in those areas?
         </p>
     </div>
-<div class='puma-box'>
-  <p>To look into NYC shootings more closely, we used Public Use Microdata Areas (PUMA), to segment off the neighborhoods. The breakdown and names of each PUMA can be seen in the picture below.</p>
-    <img class= "puma-image" src="images/puma.png" alt="">
-</div>
-<div class="flex">
-<p class="flex-text">Using data from New York City Open Data, we were able to find all of the gun-related incidents during 2020 in NYC and map them using their coordinates. Each unique incident is displayed as a red dot on the map. There were a total of 1942 unique incidents. The next goal was to find out how many incidents were in each PUMA segment. To do this, we processed the data in QGIS, which enabled us to count all of the points in each polygon (PUMA).</p>
-        <img class= "map-image" src="images/shootings.png" alt="">
-        </div>
+    <div class='puma-box'>
+        <p>To look into NYC shootings more closely, we used Public Use Microdata Areas (PUMA), to segment off the
+            neighborhoods. The breakdown and names of each PUMA can be seen in the picture below.</p>
+        <img class="puma-image" src="images/puma.png" alt="">
+    </div>
+
+    <div class="section-title top-title">
+        <h2>Shooting Data</h2>
+        <p></p>
+    </div>
+    <div class="flex pop-box">
+        <p class="flex-text">Using data from <a href="https://opendata.cityofnewyork.us/" target="_blank">New York City
+                Open Data</a>, we were able to find all of the gun-related
+            incidents during 2020 in NYC and map them using their coordinates. Each unique incident is displayed as a
+            red dot on the map. There were a total of 1942 unique incidents. </p>
+        <img class="map-image" src="images/shootings.png" alt="">
+
+    </div>
+
 
     <div class="map-box">
-        <p>Once the points in each polygon were counted, we transferred that new dataset over to ArcGIS to create the interactive map below.</p>
-     <div class="embed-container"><iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="final_project" src="//www.arcgis.com/apps/Embed/index.html?webmap=66c62285f8c54f23934db298f9ebf118&extent=-74.596,40.3531,-73.0799,41.0931&home=true&zoom=true&previewImage=false&scale=true&search=true&searchextent=true&legend=true&disable_scroll=true&theme=dark"></iframe></div>
-     <p>To display the data in ArcGIS, we created a choropleth map that split the data into 10 quantile groups. By doing this, we can find which PUMAs are in the top 10% of the gun-related incidents and which are in the bottom 10%. In the top 10%, the PUMAs are: 
-         <div class="left-align">
-         <ul>
-        <li>Brownsville & Ocean Hill</li>
-        <li>East New York & Starrett City</li>
-        <li>Belmont, Crotona Park East & East Tremont</li>
-        <li>Bedford-Stuyvesant</li>
-        <li>Jamaica, Hollis & St. Albans</li>
-        <li>Hunts Point, Longwood & Melrose</li>
-    </ul>
-</div>
-    In the lower 10%, the PUMAs are: 
-    <div class="left-align">
-    <ul>
-        <li>Bay Ridge & Dyker Heights</li>
-            <li> Borough Park, Kensington & Ocean Parkway</li>
-                <li>Upper East Side</li>
-                    <li>Bayside, Douglaston & Little Neck</li>
-                        <li>Forest Hills & Rego Park</li>
-                        <li>Tottenville, Great Kills & Annadale</li>
-    </ul>
-    </div>
-    </p>
-    </div>
-<div class="chart-box">
-    <p>As seen in the chart below, there is clearly a huge difference in shootings incidents between the groups with the most shootings in a PUMA in the top 10% group being 144 and the most shootings in a PUMA in the lower 10% group being tied at 3.</p>
-<img class= "chart-image" src="images/shootings_2020_tab.png" alt="">
-</div>
-  
-
-<div class="flex">
-    The next metric we looked at was population. Surprisingly, while both the groups have 6 PUMAs, the population totals were relatively close, the total of each group (upper 10% and lower 10%) had only about a 200k difference.
-    <img class= "flex-chart-image" src="images/population_tab.png" alt="">
-    </div>
-<div class="chart-box">
-    <p>Looking at the median age of the PUMAs, it is easier to see a correlation. Excluding the Borough Park, Kensington & Ocean Parkway PUMA, the Neighborhoods in the lower 10% have a higher median age than those in the top 10%.</p>
-        <img class= "chart-image" src="images/age_tab.png" alt="">
+        <p>The next goal was to find out how many
+            incidents were in each PUMA. To do this, we processed the data in QGIS, which enabled us to count
+            all of the incidents in each PUMA. Once the points in each PUMA were counted, we transferred that new
+            dataset over to ArcGIS to create the
+            interactive map below.</p>
+        <div class="embed-container"><iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0"
+                marginwidth="0" title="final_project"
+                src="//www.arcgis.com/apps/Embed/index.html?webmap=66c62285f8c54f23934db298f9ebf118&extent=-74.596,40.3531,-73.0799,41.0931&home=true&zoom=true&previewImage=false&scale=true&search=true&searchextent=true&legend=true&disable_scroll=true&theme=dark"></iframe>
         </div>
+        <p>To display the data in ArcGIS, we created a choropleth map that split the data into 10 quantile groups. By
+            doing this, we can find which PUMAs are in the upper 10% of the gun-related incidents and which are in the
+            lower 10%. In the upper 10%, the PUMAs are:
+        <div class="left-align">
+            <ul>
+                <li>Brownsville & Ocean Hill</li>
+                <li>East New York & Starrett City</li>
+                <li>Belmont, Crotona Park East & East Tremont</li>
+                <li>Bedford-Stuyvesant</li>
+                <li>Jamaica, Hollis & St. Albans</li>
+                <li>Hunts Point, Longwood & Melrose</li>
+            </ul>
+        </div>
+        In the lower 10%, the PUMAs are:
+        <div class="left-align">
+            <ul>
+                <li>Bay Ridge & Dyker Heights</li>
+                <li> Borough Park, Kensington & Ocean Parkway</li>
+                <li>Upper East Side</li>
+                <li>Bayside, Douglaston & Little Neck</li>
+                <li>Forest Hills & Rego Park</li>
+                <li>Tottenville, Great Kills & Annadale</li>
+            </ul>
+        </div>
+        </p>
+    </div>
+    <div class="chart-box">
+        <p>As seen in the chart below, there is clearly a huge difference in shootings incidents between the groups with
+            the most shootings in a PUMA in the top 10% group being 144 and the most shootings in a PUMA in the lower
+            10% group being tied at 3.</p>
+        <div class='tableauPlaceholder' id='viz1621480106857' style='position: relative'><noscript><a href='#'><img
+                        alt='Shootings in 2020 by Neighborhood '
+                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;sh&#47;shootings_tab&#47;Sheet1&#47;1_rss.png'
+                        style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='shootings_tab&#47;Sheet1' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image'
+                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;sh&#47;shootings_tab&#47;Sheet1&#47;1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='language' value='en' />
+            </object></div>
+        <script
+            type='text/javascript'>                    var divElement = document.getElementById('viz1621480106857'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);</script>
+    </div>
+
+    <div class="section-title">
+        <h2>Social Relationships</h2>
+        <p>From here, I used data provided by <a href="https://censusreporter.org/"
+                target="_blank">censusreporter.org</a>. That being said, the data used to derive the displayed
+            statistics has a margin of error of at least 10%.</p>
+    </div>
+    <div class="chart-box pop-box">
+
+        The next metric we looked at was population. Using the 2019 American Community Survey estimate we were able to
+        compare the population between the PUMAs. Surprisingly, while both the groups have 6 PUMAs, the population
+        totals were relatively close, the total of each group (upper 10% and lower 10%) had only about a 200k
+        difference.
+        <div class='tableauPlaceholder' id='viz1621480753379' style='position: relative'><noscript><a href='#'><img
+                        alt='Population (Size) by Percentage Group '
+                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;sh&#47;shootings_tab_2&#47;Sheet3&#47;1_rss.png'
+                        style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='shootings_tab_2&#47;Sheet3' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image'
+                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;sh&#47;shootings_tab_2&#47;Sheet3&#47;1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='language' value='en' />
+                <param name='filter' value='publish=yes' />
+            </object></div>
+        <script
+            type='text/javascript'>                    var divElement = document.getElementById('viz1621480753379'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);</script>
+    </div>
+    <div class="chart-box">
+        <p>Looking at the median age of the PUMAs, it is easier to see a correlation. Excluding the Borough Park,
+            Kensington & Ocean Parkway PUMA, the Neighborhoods in the lower 10% have an average median age of 42.6 and
+            the top 10% have an average median age of 33.6.</p>
+        <div class='tableauPlaceholder' id='viz1621481017196' style='position: relative'><noscript><a href='#'><img
+                        alt='Sheet 5 '
+                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;sh&#47;shootings_tab_4&#47;Sheet5&#47;1_rss.png'
+                        style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='shootings_tab_4&#47;Sheet5' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image'
+                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;sh&#47;shootings_tab_4&#47;Sheet5&#47;1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='language' value='en' />
+            </object></div>
+        <script
+            type='text/javascript'>                    var divElement = document.getElementById('viz1621481017196'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);</script>
+    </div>
+
+    <div class="chart-box">
+        <p>By looking at the race and ethnicity between the lower 10% and the upper 10% groups, we can see that the
+            PUMAs in the lower 10% group are predominantly White and Asian neighborhoods, and the PUMAs in the upper 10%
+            are predominately Black and Hispanic neighborhoods. Although this is the case, please do not take this for
+            face value and think of the many systemic issues that may be causing this. I will elaborate more on this in
+            my closing thoughts.</p>
+        <div class='tableauPlaceholder' id='viz1621531642394' style='position: relative'><noscript><a href='#'><img
+                        alt='Sheet 6 '
+                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;sh&#47;shootings_tab_5&#47;Sheet6&#47;1_rss.png'
+                        style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='shootings_tab_5&#47;Sheet6' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image'
+                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;sh&#47;shootings_tab_5&#47;Sheet6&#47;1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='language' value='en' />
+                <param name='filter' value='publish=yes' />
+            </object></div>
+        <script
+            type='text/javascript'>                    var divElement = document.getElementById('viz1621531642394'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);</script>
+    </div>
+
+    <div class="chart-box">
+        <div class='tableauPlaceholder' id='viz1621480589424' style='position: relative'><noscript><a href='#'><img
+                        alt='Education Level by Neighborhood '
+                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;sh&#47;shootings_tab_1&#47;Sheet2&#47;1_rss.png'
+                        style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='shootings_tab_1&#47;Sheet2' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image'
+                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;sh&#47;shootings_tab_1&#47;Sheet2&#47;1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='language' value='en' />
+                <param name='filter' value='publish=yes' />
+            </object></div>
+        <script
+            type='text/javascript'>                    var divElement = document.getElementById('viz1621480589424'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);</script>
+        <p>When looking at education level between the PUMAs, both groups had a decent high school or higher education
+            rate, but the lower 10% group was consistently higher (average of 79% for the top 10% group and an average
+            of 89% for the lower 10% group). When it comes to, bachelor's degree or higher education level, it isn't
+            even close. The upper 10% group has an average of 19.1% and the lower 10% has an average of 51.7%.</p>
+    </div>
 
 
-        <div class="flex">
-            <img class= "flex-chart-image" src="images/education_tab.png" alt="">
-            <p>When looking at education level between the PUMAs, both groups had a decent high school or higher education rate, but the lower 10% group was consistently higher (average of 79% for the top 10% group and an average of 89% for the lower 10% group). When it comes to, bachelor's degree or higher education level, it isn't even close. The upper 10% group has an average of 19.1% and the lower 10% has an average of 51.7%.</p>
-            </div>
 
+    <div class="chart-box">
+        <p>In the chart below, we look into the financial situation of the PUMAs. Much like the results in the previous
+            scatterplot. The median household income is much lower and the percent of those living under the poverty
+            line is much higher in the upper 10% group compared to the lower 10% group. On average the median household
+            income of those in the upper 10% group make $42,157.50 a year and 28.5% of people in the upper group are
+            living under the poverty line. In the lower 10% group, the average household income is $92,628.50 and there
+            is an average of 11.4% of people living below the poverty line.</p>
+        <div class='tableauPlaceholder' id='viz1621480908308' style='position: relative'><noscript><a href='#'><img
+                        alt='Median Household Income by % of Those Living below Poverty Line '
+                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;sh&#47;shootings_tab_3&#47;Sheet4&#47;1_rss.png'
+                        style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='shootings_tab_3&#47;Sheet4' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image'
+                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;sh&#47;shootings_tab_3&#47;Sheet4&#47;1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='language' value='en' />
+                <param name='filter' value='publish=yes' />
+            </object></div>
+        <script
+            type='text/javascript'>                    var divElement = document.getElementById('viz1621480908308'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);</script>
+    </div>
 
-            <div class="flex">
-                <p>In the chart below, we look into the financial situation of the PUMAs. Much like the results in the previous scatterplot. The median household income is much lower and the percent of those living under the poverty line is much higher in the upper 10% group compared to the lower 10% group. On average the median household income of those in the upper 10% group make $42,157.50 a year and 28.5% of people in the upper group are living under the poverty line. In the lower 10% group, the average household income is $92,628.50 and there is an average of 11.4% of people living below the poverty line.</p>
-                <img class= "flex-chart-image" src="images/income_tab.png" alt="">
-                </div>
+    <div class="closing-title">
+        <h2>Closing Thoughts</h2>
+        <p>Gun violence doesn't stop by addressing some of the relationships found in this study, but we hope that we
+            can provide some insight and ideas to spark conversation between those reading. Starting with the youth,
+            reinvest in the schools that are located in the PUMAs that are struggle with gun-related shootings to get
+            the education between the two groups on a closer level. Kids deserve an equal opportunity to succeed and
+            further their education beyond just high school. Providing more funding and scholarship opportunities can be
+            crucial to kids in low-income areas. For those working in low-income areas, we need to see more
+            opportunities and diversity in the type of jobs that available in these areas and provide wages that people
+            can survive on. One of the most prominent relationships we can see is through the race and
+            ethnicity of those that make up these neighborhoods, but as we said earlier, don't take this for face value
+            and jump to conclusions about people. While White and Asian people make up most of the population in the
+            lower 10% PUMAs and Black and Hispanic people make up most of the population in the upper 10% PUMAs, these
+            relationships can be contributed to systemic issues that we need to fix all across the country. Black and
+            Hispanic neighborhoods in New York have long suffered from issues such as redlining, over-policing, and
+            gentrification.</p>
+    </div>
+    <div class="closing-remarks">
+        <p></p>
+    </div>
+
+    <div class="sources">
+        <p><strong style="text-decoration: underline;">Data sources</strong></p>
+        <p><em>NYC Open Data:</em></p>
+        <a href="https://data.cityofnewyork.us/Housing-Development/Public-Use-Microdata-Areas-PUMA-/cwiz-gcty"
+            target="_blank">https://data.cityofnewyork.us/Housing-Development/Public-Use-Microdata-Areas-PUMA-/cwiz-gcty</a>
+        <br><a href="https://data.cityofnewyork.us/Public-Safety/NYPD-Shooting-Incident-Data-Historic-/833y-fsy8"
+            target="_blank">https://data.cityofnewyork.us/Public-Safety/NYPD-Shooting-Incident-Data-Historic-/833y-fsy8</a>
+        <p><em>Census Reporter:</em></p>
+        <a href="https://censusreporter.org/profiles/79500US3604007-nyc-brooklyn-community-district-16-brownsville-ocean-hill-puma-ny/"
+            target="_blank">https://censusreporter.org/profiles/79500US3604007-nyc-brooklyn-community-district-16-brownsville-ocean-hill-puma-ny/</a>
+        <br><a
+            href="https://censusreporter.org/profiles/79500US3604008-nyc-brooklyn-community-district-5-east-new-york-starrett-city-puma-ny/"
+            target="_blank">https://censusreporter.org/profiles/79500US3604008-nyc-brooklyn-community-district-5-east-new-york-starrett-city-puma-ny/</a>
+        <br> <a
+            href="https://censusreporter.org/profiles/79500US3603705-nyc-bronx-community-district-3-6-belmont-crotona-park-east-east-tremont-puma-ny/"
+            target="_blank">https://censusreporter.org/profiles/79500US3603705-nyc-bronx-community-district-3-6-belmont-crotona-park-east-east-tremont-puma-ny/</a>
+        <br> <a
+            href="https://censusreporter.org/profiles/79500US3604003-nyc-brooklyn-community-district-3-bedford-stuyvesant-puma-ny/"
+            target="_blank">https://censusreporter.org/profiles/79500US3604003-nyc-brooklyn-community-district-3-bedford-stuyvesant-puma-ny/</a>
+        <br> <a
+            href="https://censusreporter.org/profiles/79500US3604112-nyc-queens-community-district-12-jamaica-hollis-st-albans-puma-ny/"
+            target="_blank">https://censusreporter.org/profiles/79500US3604112-nyc-queens-community-district-12-jamaica-hollis-st-albans-puma-ny/</a>
+        <br> <a
+            href="https://censusreporter.org/profiles/79500US3603710-nyc-bronx-community-district-1-2-hunts-point-longwood-melrose-puma-ny/"
+            target="_blank">https://censusreporter.org/profiles/79500US3603710-nyc-bronx-community-district-1-2-hunts-point-longwood-melrose-puma-ny/</a>
+        <br> <a
+            href="https://censusreporter.org/profiles/79500US3604013-nyc-brooklyn-community-district-10-bay-ridge-dyker-heights-puma-ny/"
+            target="_blank">https://censusreporter.org/profiles/79500US3604013-nyc-brooklyn-community-district-10-bay-ridge-dyker-heights-puma-ny/</a>
+        <br><a
+            href="https://censusreporter.org/profiles/79500US3604014-nyc-brooklyn-community-district-12-borough-park-kensington-ocean-parkway-puma-ny/"
+            target="_blank">https://censusreporter.org/profiles/79500US3604014-nyc-brooklyn-community-district-12-borough-park-kensington-ocean-parkway-puma-ny/</a>
+        <br> <a
+            href="https://censusreporter.org/profiles/79500US3603805-nyc-manhattan-community-district-8-upper-east-side-puma-ny/"
+            target="_blank">https://censusreporter.org/profiles/79500US3603805-nyc-manhattan-community-district-8-upper-east-side-puma-ny/</a>
+        <br> <a
+            href="https://censusreporter.org/profiles/79500US3604104-nyc-queens-community-district-11-bayside-douglaston-little-neck-puma-ny/"
+            target="_blank">https://censusreporter.org/profiles/79500US3604104-nyc-queens-community-district-11-bayside-douglaston-little-neck-puma-ny/</a>
+
+    </div>
 
 </body>
 
